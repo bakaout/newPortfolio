@@ -7,6 +7,33 @@ $btnIdea.addEventListener('click', () => {
 })
 
 const $copiaSenha = document.querySelector('.btnCopiar')
-$copiaSenha.addEventListener(() => {
+$copiaSenha.addEventListener('click', () => {
     let senha = 'me contratem!'
+    navigator.clipboard.writeText(senha).then(() => {
+        console.log('Deu certo, texto copiado')
+    }).catch((erro) => {
+        console.error('Deu errado', erro)
+    })
 })
+
+
+
+const input = document.querySelector('.senha')
+input.addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        verificaSenha();
+        console.log('Senha enviada');
+        input.value = ''
+    }
+  });
+
+function verificaSenha(){
+    const inputValor = document.querySelector('.senha').value
+    console.log(inputValor)
+    if(inputValor == 'me contratem!'){
+        window.location.href = './paginas/home.html'
+    }else{
+        alert('Senha errada, tente novamente!')
+        input.value = ''
+    }
+}

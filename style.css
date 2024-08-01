@@ -145,6 +145,13 @@
     border-radius: 3px;
     color: white;
 }
+.btnPular{
+    padding: 5px;
+    font-family: 'pixel', 'Courier New', Courier, monospace;
+    background-color: #7000FF;
+    border-radius: 3px;
+    color: white;
+}
 
 .btn:focus, .btn:hover{
     border-radius: 3px;
