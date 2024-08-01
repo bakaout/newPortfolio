@@ -92,10 +92,17 @@
 }
 .esconder{
     visibility: hidden;
-}
-.teste2{
     width: 250px;
     height: 450px;
+    bottom: 120px;
+    right: 30px;
+    border-radius: 3px;
+    position: fixed;
+}
+.teste2{
+    visibility: visible;
+    width: 250px;
+    height: 360px;
     bottom: 120px;
     right: 30px;
     border-radius: 3px;
@@ -103,8 +110,7 @@
     margin-top: 180px;
     background-color: white;
     padding: 10px;
-    transition: 0.3s ease-in-out;;
-    visibility: visible;
+    transition: 0.3s ease-in-out;
     padding: 0;
 }
 .teste2 > .headerBox{
@@ -115,25 +121,25 @@
 }
 .mainBox{
     font-family: 'pixel', 'Courier New', Courier, monospace;
-    background-color: beige;
+    background-color: white;
     align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 .mainBox > p{
-    margin-top: 20px;
-    margin-bottom: 20px;
+    padding: 0;
+    margin-top: 40px;
     color: black;
 }
 .mainBox > button{
-    margin: 10px;
     padding: 5px;
     font-family: 'pixel', 'Courier New', Courier, monospace;
     
-
 }
 .btn{
+    margin-top: 20px;
+    margin-bottom: 20px;
     border: 0;
     background-color: #7000FF;
     border-radius: 3px;
