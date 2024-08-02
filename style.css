@@ -60,6 +60,19 @@
     background-color: #fff;
     box-shadow: 0 0 0 5px rgba(126, 13, 255, 0.3);
 }
+#enviar{
+    background-color: #00000000;
+    border: 0;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+    margin-top: 20px;
+}
+#enviar:hover{
+    border-radius: 3px;
+    outline: none;
+    border-color: #7e0dff;
+    box-shadow: 0 0 0 5px rgba(126, 13, 255, 0.3);
+}
 
 @keyframes cimaBaixo{
     from{

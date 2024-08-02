@@ -18,6 +18,11 @@ $copiaSenha.addEventListener('click', () => {
 
 
 
+const enviar = document.querySelector('#enviar')
+let prosseguir = false
+function auxiliaBtnEnviar(){
+    verificaSenha();
+}
 const input = document.querySelector('.senha')
 input.addEventListener('keypress', function(event) {
     if (event.key === 'Enter') {
