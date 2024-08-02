@@ -42,3 +42,18 @@ function verificaSenha(){
         input.value = ''
     }
 }
+
+const frase = document.querySelector('#frase')
+function digitando(elemento){
+    const fraseSeparada = elemento.innerHTML.split('')//separando as letras e colocando em um array
+
+    elemento.innerHTML = ''//limpando o array para que apareça apenas com o forEach
+
+    //percorrer os indices e valores do array
+    fraseSeparada.forEach((letra, index) => {
+        setTimeout(() => {
+            elemento.innerHTML += letra
+        }, 100 * index)//aqui esta o segredo, a cada index que passa, o valor multiplica, fazendo com que a proxima letra apareça um pouco mais devagar com a impressando de digitando
+    })
+}
+digitando(frase)

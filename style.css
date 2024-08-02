@@ -11,8 +11,11 @@
     font-family: 'pixelFino';
     src: url(./fonts/Pixel\ Georgia.ttf);
 }
+body{
+    position: relative;
+}
 
-.conatiner-father{
+.container-father{
     position: relative;
     background-color: black;
     align-items: center;
@@ -189,4 +192,12 @@ span{
     color: white;
     font-family: 'pixel', 'Courier New', Courier, monospace;
     text-align: center;
+}
+
+#particles-js{
+    position: absolute;
+    color: white;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
 }
