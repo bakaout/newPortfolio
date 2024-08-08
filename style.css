@@ -14,7 +14,7 @@
 body{
     position: relative;
 }
-
+/*COMEÇO DA PAGINA INDEX*/
 .container-father{
     position: relative;
     background-color: black;
@@ -200,4 +200,36 @@ span{
     overflow: hidden;
     margin: 0;
     padding: 0;
+}
+/*FIM DA PAGINA INDEX*/
+
+/*COMEÇO DA PAGINA HOME*/
+#bodyHome{
+    background-color: #000000;
+    color: white;
+    text-align: center;
+}
+#containerHome{
+    background-color: black;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+}
+#listaPastas{
+    display: flex;/*MUDAR PARA GRID*/
+}
+#pastas{
+    padding: 20px;
+}
+
+#pastas > img{
+    width: 100px;
+}
+#footerHome{
+    padding: 30px;
+    background-color: white;
+    color: black;
+    width: 300px;
 }
