@@ -193,14 +193,6 @@ span{
     font-family: 'pixel', 'Courier New', Courier, monospace;
     text-align: center;
 }
-
-#particles-js{
-    position: absolute;
-    color: white;
-    overflow: hidden;
-    margin: 0;
-    padding: 0;
-}
 /*FIM DA PAGINA INDEX*/
 
 /*COMEÇO DA PAGINA HOME*/
@@ -208,8 +200,10 @@ span{
     background-color: #000000;
     color: white;
     text-align: center;
+    position: relative;
 }
 #containerHome{
+    position: relative;
     background-color: black;
     align-items: center;
     display: flex;
@@ -217,19 +211,45 @@ span{
     height: 100vh;
     justify-content: center;
 }
+#containerHome > h1{
+    font-family: 'pixel';
+    font-size: 50px;
+    position: absolute;
+    top: 120px;
+    
+}
 #listaPastas{
-    display: flex;/*MUDAR PARA GRID*/
+    display: grid;/*MUDAR PARA GRID*/
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    border: 1px solid red;
+    /*COLOCAR WRAPPER PRA QUEBRA DE LINHA*/
 }
 #pastas{
     padding: 20px;
+}
+#pastas{
+    padding: 20px;
+}
+#pastas > p{
+    font-family: 'pixelFino';
 }
 
 #pastas > img{
     width: 100px;
 }
 #footerHome{
-    padding: 30px;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 50px;
+    bottom: 30px;
+    left: 50%;
+    transform: translate(-50%);
+    padding: 5px;
     background-color: white;
     color: black;
     width: 300px;
+    border-radius: 20px;
+    padding: 10px 0 10px 0;
 }
