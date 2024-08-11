@@ -221,7 +221,7 @@ span{
 #listaPastas{
     display: grid;/*MUDAR PARA GRID*/
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    border: 1px solid red;
+    /*border: 1px solid red;*/
     /*COLOCAR WRAPPER PRA QUEBRA DE LINHA*/
 }
 #pastas{
