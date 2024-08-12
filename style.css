@@ -227,8 +227,9 @@ span{
 #pastas{
     padding: 20px;
 }
-#pastas{
-    padding: 20px;
+#pastas:hover{
+    transform: scale(1.07);
+    transition: transform 0.5s ease-in;
 }
 #pastas > p{
     font-family: 'pixelFino';
@@ -252,4 +253,11 @@ span{
     width: 300px;
     border-radius: 20px;
     padding: 10px 0 10px 0;
+}
+
+@media (max-width: 800px) {
+    #listaPastas{
+        display: grid;/*MUDAR PARA GRID*/
+        grid-template-columns: 1fr 1fr;
+    }
 }
