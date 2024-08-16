@@ -194,7 +194,7 @@ span{
     text-align: center;
 }
 /*FIM DA PAGINA INDEX*/
-
+/*---------------------------------------*/
 /*COMEÇO DA PAGINA HOME*/
 #bodyHome{
     background-color: #000000;
@@ -215,8 +215,7 @@ span{
     font-family: 'pixel';
     font-size: 50px;
     position: absolute;
-    top: 120px;
-    
+    top: 120px;  
 }
 #listaPastas{
     display: grid;/*MUDAR PARA GRID*/
@@ -259,5 +258,28 @@ span{
     #listaPastas{
         display: grid;/*MUDAR PARA GRID*/
         grid-template-columns: 1fr 1fr;
+        margin-top: 50px;
+    }
+    #containerHome > h1{
+        top: 50px;  
     }
 }
+/*FIM DA PAGINA HOME*/
+/*---------------------------------------*/
+/*COMEÇO DA PAGINA SOBRE MIM*/
+#bodySobreMim{
+    background-color: black;
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid red;
+}
+#main{
+    width: 500px;
+}
+#h1Rotate{
+    transform: rotate(-90deg);
+}
+/*USAR GRID*/
