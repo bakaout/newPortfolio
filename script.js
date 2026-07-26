@@ -1,3 +1,11 @@
+//FUNCIONALIDADES QUE QUERO IMPLEMENTAR:
+// - alterar para um projeto typescript com node.js
+//criar um contaddor de visitas com algumas funcionalidades
+//na aba de projetos, usar a api do github para pegar meus projetos, atualizações, tecnologias usadas, datas, read.me formatados direto no site, entre outras
+//manter a ideia original do projeto de ser parecido com o ambiente de uma area de trabalho
+
+
+
 const $btnIdea = document.querySelector('.btnIdea')
 const $teste = document.querySelector('.teste')
 
