@@ -1,8 +1,4 @@
-//FUNCIONALIDADES QUE QUERO IMPLEMENTAR:
-// - alterar para um projeto typescript com node.js
-//criar um contaddor de visitas com algumas funcionalidades
-//na aba de projetos, usar a api do github para pegar meus projetos, atualizações, tecnologias usadas, datas, read.me formatados direto no site, entre outras
-//manter a ideia original do projeto de ser parecido com o ambiente de uma area de trabalho
+//TRANSFORMAR ISSO EM TYPESCRIPT NO MAIN.TS
 
 
 
@@ -23,6 +19,12 @@ $copiaSenha.addEventListener('click', () => {
         console.error('Deu errado', erro)
     })
 })
+
+const $pular = document.querySelector('.btnPular')
+$pular.addEventListener('click', () => {
+    window.open('./paginas/home.html', '_self')
+})
+
 
 
 

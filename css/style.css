@@ -11,6 +11,10 @@
     font-family: 'pixelFino';
     src: url(./fonts/Pixel\ Georgia.ttf);
 }
+
+.h1{
+    color: white;
+}
 body{
     position: relative;
 }
