@@ -274,7 +274,6 @@ span{
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid red;
 }
 #main{
     width: 500px;

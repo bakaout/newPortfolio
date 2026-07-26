@@ -36,7 +36,8 @@ function verificaSenha(){
     const inputValor = document.querySelector('.senha').value
     console.log(inputValor)
     if(inputValor == 'me contratem!'){
-        window.open('./paginas/home.html', '_blank');
+        window.open('./paginas/home.html', '_self');
+        input.value = ''
     }else{
         alert('Senha errada, tente novamente!')
         input.value = ''
