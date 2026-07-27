@@ -1,3 +1,4 @@
+"use strict";
 //FUNCIONALIDADES QUE QUERO IMPLEMENTAR:
 // - alterar para um projeto typescript com node.js
 //criar um contaddor de visitas com algumas funcionalidades
@@ -8,10 +9,16 @@
 // tema claro escuro
 // navegação pela tool bar
 // mudança de portugues para ingles
-const message = "Ola, joao";
-console.log(message);
-const title = "meu portifolio";
-const teste = document.querySelector('.teste');
-teste.textContent = title;
-export {};
+const $btnArquivo = document.querySelector('.btnArquivo');
+const $alteraClasse = document.querySelector('.alteraClasse');
+//trocar para a classe 'arquivoAberto' e remover 
+$btnArquivo.addEventListener('click', () => {
+    $alteraClasse?.classList.toggle('arquivoAberto');
+    if ($alteraClasse?.classList.value === 'escoder') {
+        $alteraClasse?.classList.remove('esconder');
+    }
+    else {
+        $alteraClasse?.classList.value === 'esconder';
+    }
+});
 //# sourceMappingURL=main.js.map

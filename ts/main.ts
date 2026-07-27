@@ -11,12 +11,15 @@
 // mudança de portugues para ingles
 
 
-const message: string = "Ola, joao"
+const $btnArquivo = document.querySelector('.btnArquivo') as HTMLHeadingElement
+const $alteraClasse = document.querySelector('.alteraClasse')
 
-console.log(message)
-
-const title: string = "meu portifolio"
-
-const teste = document.querySelector('.teste') as HTMLHeadingElement
-
-teste.textContent = title
+//trocar para a classe 'arquivoAberto' e remover 
+$btnArquivo.addEventListener('click', () => {
+    $alteraClasse?.classList.toggle('arquivoAberto')
+    if( $alteraClasse?.classList.value === 'escoder'){
+        $alteraClasse?.classList.remove('esconder')
+    }else{
+        $alteraClasse?.classList.value === 'esconder'
+    }
+})

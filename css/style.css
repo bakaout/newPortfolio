@@ -91,7 +91,7 @@ body{
     }
 }
 
-.btnIdea{
+.btnArquivo{
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -103,7 +103,7 @@ body{
     transition: 0.5s ease-in-out;
     animation: cimaBaixo 4s infinite;
 }
-.btnIdea:hover{
+.btnArquivo:hover{
     background-color: #7e0dff;
     bottom: 25px;
     animation: none;
@@ -117,7 +117,7 @@ body{
     border-radius: 3px;
     position: fixed;
 }
-.teste2{
+.arquivoAberto{
     visibility: visible;
     width: 250px;
     height: 350px;
@@ -131,7 +131,7 @@ body{
     transition: 0.3s ease-in-out;
     padding: 0;
 }
-.teste2 > .headerBox{
+.arquivoAberto > .headerBox{
     background-color: #7e0dff;
     color: #fff;
     font-family: 'pixel', 'Courier New', Courier, monospace;
