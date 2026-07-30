@@ -5,11 +5,11 @@
 
 @font-face {
     font-family: 'pixel';
-    src: url(./fonts/Pixel\ Georgia\ Bold.ttf);
+    src: url(../fonts/Pixel\ Georgia\ Bold.ttf);
 }
 @font-face {
     font-family: 'pixelFino';
-    src: url(./fonts/Pixel\ Georgia.ttf);
+    src: url(../fonts/Pixel\ Georgia.ttf);
 }
 
 .h1{

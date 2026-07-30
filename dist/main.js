@@ -62,4 +62,20 @@ function verificaSenha() {
         senhaInserida.value = '';
     }
 }
+//criação da função 'digitando'
+const frase = document.querySelector('#frase');
+function digitando(digit) {
+    //separando as letras por espaço e colocando em um array
+    const fraseSplit = digit.textContent?.split('');
+    //limpando o array para que apareça apenas com o forEach
+    digit.textContent = '';
+    fraseSplit.forEach((letra, index) => {
+        setTimeout(() => {
+            digit.textContent += letra;
+        }, 100 * index); //aqui esta o segredo, a cada index que passa, o valor multiplica, fazendo com que a proxima letra apareça um pouco mais devagar com a impressando de digitando
+    });
+}
+if (frase) {
+    digitando(frase);
+}
 //# sourceMappingURL=main.js.map
