@@ -44,21 +44,26 @@ const $btnPular = document.querySelector<HTMLButtonElement>('.btnPular')
 
 
 //função do botão enviar
+const senhaInserida = document.querySelector<HTMLInputElement>('.senha')
 
-
-
+function btnEnviaSenha(): void{
+    verificaSenha()
+    senhaInserida?.addEventListener('keypress', function(event) {
+        if(event.key === 'Enter'){
+            console.log('Senha enviada')
+            senhaInserida.value = ''
+        }
+    })
+}
 
 
 //criando logica de validação de senha e redirecionamento para pagina home
-const senhaInserida = document.querySelector<HTMLInputElement>('.senha')
-
-function verificaSenha(){
-    const valorInput = senhaInserida?.value
+function verificaSenha(): void{
 
     //eliminando a possibilidade de senhaInserida ser nulla
     if(!senhaInserida){
         return
-    }else if(valorInput === 'senha'){
+    }else if(senhaInserida.value === senha){
         window.open('../paginas/home.html', '_self')
         senhaInserida.value = ''
     }else{

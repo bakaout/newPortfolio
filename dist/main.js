@@ -37,15 +37,23 @@ $btnPular?.addEventListener('click', () => {
     window.open('../paginas/home.html', '_self');
 });
 //função do botão enviar
-//criando logica de validação de senha e redirecionamento para pagina home
 const senhaInserida = document.querySelector('.senha');
+function btnEnviaSenha() {
+    verificaSenha();
+    senhaInserida?.addEventListener('keypress', function (event) {
+        if (event.key === 'Enter') {
+            console.log('Senha enviada');
+            senhaInserida.value = '';
+        }
+    });
+}
+//criando logica de validação de senha e redirecionamento para pagina home
 function verificaSenha() {
-    const valorInput = senhaInserida?.value;
     //eliminando a possibilidade de senhaInserida ser nulla
     if (!senhaInserida) {
         return;
     }
-    else if (valorInput === 'senha') {
+    else if (senhaInserida.value === senha) {
         window.open('../paginas/home.html', '_self');
         senhaInserida.value = '';
     }
