@@ -9,7 +9,28 @@
 // tema claro escuro
 // navegação pela tool bar
 // mudança de portugues para ingles
+import type { GitHubUser } from "./services/github.js"
+import { loadUser } from "./services/github.js"
 
+async function main() {
+    const user = await loadUser()
+    infos(user)
+    console.log(user)
+}
+main()
+
+//INSERIR LOGICA DE: A CADA PROJETO CRIADO, CRIAR UMA DIV COM AS INFORMAÇÕES DESSE PROJETO
+
+function infos(meuPerfil: GitHubUser): void {
+    const h1 = document.querySelector('.titulo')
+    const bio = document.querySelector('.bio')
+    const repo = document.querySelector('.repo')
+
+    if (h1) h1.textContent = meuPerfil.name
+    if (bio) bio.textContent = meuPerfil.bio
+    if (repo) repo.textContent = meuPerfil.public_repos.toString()//forçando a se tornar string
+
+}
 
 const $btnArquivo = document.querySelector<HTMLButtonElement>('.btnArquivo')
 const $alteraClasse = document.querySelector('.alteraClasse') as HTMLHeadingElement
@@ -19,8 +40,6 @@ $btnArquivo?.addEventListener('click', () => {
     $alteraClasse?.classList.toggle('arquivoAberto')
     if( $alteraClasse?.classList.value === 'escoder'){
         $alteraClasse?.classList.remove('esconder')
-    }else{
-        $alteraClasse?.classList.value === 'esconder'
     }
 })
 

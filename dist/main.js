@@ -1,14 +1,27 @@
-"use strict";
 //FUNCIONALIDADES QUE QUERO IMPLEMENTAR:
 // - alterar para um projeto typescript com node.js
 //criar um contaddor de visitas com algumas funcionalidades
 //na aba de projetos, usar a api do github para pegar meus projetos, atualizações, tecnologias usadas, datas, read.me formatados direto no site, entre outras
 //manter a ideia original do projeto de ser parecido com o ambiente de uma area de trabalho
-// paginas: sobre mim, Jornada, Projetos (utilizando api github)
-// botao de baixar curriculo na area de Jornada
-// tema claro escuro
-// navegação pela tool bar
-// mudança de portugues para ingles
+import { loadUser } from "./services/github.js";
+async function main() {
+    const user = await loadUser();
+    infos(user);
+    console.log(user);
+}
+main();
+//INSERIR LOGICA DE: A CADA PROJETO CRIADO, CRIAR UMA DIV COM AS INFORMAÇÕES DESSE PROJETO
+function infos(meuPerfil) {
+    const h1 = document.querySelector('.titulo');
+    const bio = document.querySelector('.bio');
+    const repo = document.querySelector('.repo');
+    if (h1)
+        h1.textContent = meuPerfil.name;
+    if (bio)
+        bio.textContent = meuPerfil.bio;
+    if (repo)
+        repo.textContent = meuPerfil.public_repos.toString(); //forçando a se tornar string
+}
 const $btnArquivo = document.querySelector('.btnArquivo');
 const $alteraClasse = document.querySelector('.alteraClasse');
 //troca a classe 'alteraClasse' por 'arquivoAberto' e remove a classe 'esconder' 
@@ -16,9 +29,6 @@ $btnArquivo?.addEventListener('click', () => {
     $alteraClasse?.classList.toggle('arquivoAberto');
     if ($alteraClasse?.classList.value === 'escoder') {
         $alteraClasse?.classList.remove('esconder');
-    }
-    else {
-        $alteraClasse?.classList.value === 'esconder';
     }
 });
 //função de copiar a senha para a area de transferencia
