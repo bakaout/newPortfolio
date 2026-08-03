@@ -77,3 +77,57 @@ h1{
     color: #58a6ff;
     font-weight: bold;
 }
+
+/*esilizando reposiorios*/
+
+body{
+    background-color: #0d1117;
+    color: #f5f5f5;
+    font-family: "Segoe UI", sans-serif;
+}
+
+#project_id{
+    width: 350px;
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px;
+    transition: .25s;
+    box-shadow: 0 10px 25px rgba(0,0,0,.35);
+}
+
+#project_id:hover{
+    transform: translateY(-6px);
+    border-color: #58a6ff;
+}
+
+.nameP{
+    font-size: 1.5rem;
+    color: #58a6ff;
+    margin-bottom: 12px;
+}
+
+.descP{
+    color: #c9d1d9;
+    line-height: 1.6;
+    margin-bottom: 18px;
+}
+
+.languagesP{
+    display: inline-block;
+    background: #21262d;
+    color: #7ee787;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: .9rem;
+    font-weight: bold;
+    margin-bottom: 18px;
+}
+
+.lastCommit{
+    font-size: .9rem;
+    color: #8b949e;
+    border-top: 1px solid #30363d;
+    padding-top: 12px;
+}

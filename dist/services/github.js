@@ -14,8 +14,11 @@ export async function loadRepos() {
     const data = await response1.json();
     return data;
 }
-export async function LoadLanguages(url) {
-    const response = await fetch(url);
-    return await response.json();
-}
+// interface Language_url {
+//     languages_url?: string | null;
+// }
+// export async function LoadLanguages(url: string){
+//     const response = await fetch(url)
+//     return await response.json()
+// }
 //# sourceMappingURL=github.js.map

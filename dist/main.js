@@ -15,7 +15,7 @@ async function main() {
 }
 main();
 //INSERIR LOGICA DE: A CADA PROJETO CRIADO, CRIAR UMA DIV COM AS INFORMAÇÕES DESSE PROJETO
-//a cada projeto, criar uma div nova, com a classe 'projeto', projeto2.. e assim por diante acrescentttando um numero
+//Corrigir bug do pq não estar aparecendo as informações dos repositorios nas paginas. Obs: loadRepos retorna um array mas a função esa esperando outra informação. corrijir isto
 function repositorios(projetos) {
     const project_id = document.querySelector('#project_id');
     const nameProjeto = document.querySelector('.nameP');
