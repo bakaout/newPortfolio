@@ -28,16 +28,25 @@ main()
 //INSERIR LOGICA DE: A CADA PROJETO CRIADO, CRIAR UMA DIV COM AS INFORMAÇÕES DESSE PROJETO
 //Corrigir bug do pq não estar aparecendo as informações dos repositorios nas paginas. Obs: loadRepos retorna um array mas a função esa esperando outra informação. corrijir isto
 
-function repositorios(projetos: Repositorio): void {
-    const project_id = document.querySelector('#project_id') as HTMLHeadingElement
-    const nameProjeto = document.querySelector('.nameP') as HTMLHeadingElement
-    const descProjeto = document.querySelector('.descP') as HTMLHeadingElement
-    //const languagesProjeto = document.querySelector('.languagesP') as HTMLHeadingElement
-    const lastCommit = document.querySelector('.lastCommit') as HTMLHeadingElement
+function repositorios(projetos: Repositorio[]): void {
+    //console.log(projetos[0]?.id)
 
-    if (nameProjeto) nameProjeto.textContent = projetos.name
-    if (descProjeto) descProjeto.textContent = projetos.description
-    if (lastCommit) lastCommit.textContent = projetos.pushed_at
+    projetos.forEach(projeto => {
+        const divRepos = document.querySelector("#repositorios")
+        const div = document.createElement('div')
+        div.className = 'projetos'
+        div.innerHTML = `
+            <h1>${projeto.name}</h1>
+            <p>${projeto.description}</p>
+            <p>${projeto.pushed_at}</p>
+        `
+        divRepos?.appendChild(div)
+
+    })
+
+    // if (nameProjeto) nameProjeto.textContent = projetos.name
+    // if (descProjeto) descProjeto.textContent = projetos.description
+    // if (lastCommit) lastCommit.textContent = projetos.pushed_at
 
 }
 
@@ -49,7 +58,7 @@ function infos(meuPerfil: GitHubUser): void {
 
     if (h1) h1.textContent = meuPerfil.name
     if (bio) bio.textContent = meuPerfil.bio
-    if (repo) repo.textContent = meuPerfil.public_repos.toString()//forçando a se tornar string
+    if (repo) repo.textContent = `Repositórios: ${meuPerfil.public_repos.toString()}`//forçando a se tornar string
     if(avatar) avatar.setAttribute('src', `${meuPerfil.avatar_url}`)
 
 }

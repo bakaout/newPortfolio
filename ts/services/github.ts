@@ -33,7 +33,7 @@ export interface Repositorio {
     pushed_at: string;
 }
 
-export async function loadRepos(): Promise<Repositorio>{
+export async function loadRepos(): Promise<Repositorio[]>{
     const response1 = await fetch(`https://api.github.com/users/${joka}/repos`)
 
     const data = await response1.json()
