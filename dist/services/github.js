@@ -14,6 +14,8 @@ export async function loadRepos() {
     const data = await response1.json();
     return data;
 }
+//PROXIMA FEATURE: INCREMENTAR LINGUAGENS QUE FORAM USADAS NOS REPOSITORIOS
+//https://api.github.com/repos/bakaout/CRUDmovies/languages
 // interface Language_url {
 //     languages_url?: string | null;
 // }

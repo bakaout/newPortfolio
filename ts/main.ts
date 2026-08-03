@@ -25,9 +25,14 @@ async function main() {
 }
 main()
 
-//INSERIR LOGICA DE: A CADA PROJETO CRIADO, CRIAR UMA DIV COM AS INFORMAÇÕES DESSE PROJETO
-//Corrigir bug do pq não estar aparecendo as informações dos repositorios nas paginas. Obs: loadRepos retorna um array mas a função esa esperando outra informação. corrijir isto
+//PROXIMA FEATURE: INCREMENTAR LINGUAGENS QUE FORAM USADAS NOS REPOSITORIOS
 
+
+
+
+
+//REPOSITORIOS BBAKAOUT COM NOME, DESCRIÇÃO, ULTTIMO COMMIT
+//Obs: deixar repositorios em ordem de ultimo commit e adicionar mais informações, adicionar bottão de redirecionamento ao github ouu aplicação rodando
 function repositorios(projetos: Repositorio[]): void {
     //console.log(projetos[0]?.id)
 
@@ -43,13 +48,8 @@ function repositorios(projetos: Repositorio[]): void {
         divRepos?.appendChild(div)
 
     })
-
-    // if (nameProjeto) nameProjeto.textContent = projetos.name
-    // if (descProjeto) descProjeto.textContent = projetos.description
-    // if (lastCommit) lastCommit.textContent = projetos.pushed_at
-
 }
-
+//INFORMAÇÕES DO PERFIL BBAKAOUT
 function infos(meuPerfil: GitHubUser): void {
     const avatar = document.querySelector('.avatar') as HTMLImageElement
     const h1 = document.querySelector('.titulo') as HTMLHeadingElement
