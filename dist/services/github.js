@@ -9,4 +9,13 @@ export async function loadUser() {
     const data = await response.json();
     return data;
 }
+export async function loadRepos() {
+    const response1 = await fetch(`https://api.github.com/users/${joka}/repos`);
+    const data = await response1.json();
+    return data;
+}
+export async function LoadLanguages(url) {
+    const response = await fetch(url);
+    return await response.json();
+}
 //# sourceMappingURL=github.js.map

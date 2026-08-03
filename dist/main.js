@@ -4,14 +4,31 @@
 //na aba de projetos, usar a api do github para pegar meus projetos, atualizações, tecnologias usadas, datas, read.me formatados direto no site, entre outras
 //manter a ideia original do projeto de ser parecido com o ambiente de uma area de trabalho
 import { loadUser } from "./services/github.js";
+import { loadRepos } from "./services/github.js";
 async function main() {
     const user = await loadUser();
+    const repos = await loadRepos();
     infos(user);
+    repositorios(repos);
     console.log(user);
+    console.log(repos);
 }
 main();
 //INSERIR LOGICA DE: A CADA PROJETO CRIADO, CRIAR UMA DIV COM AS INFORMAÇÕES DESSE PROJETO
 //a cada projeto, criar uma div nova, com a classe 'projeto', projeto2.. e assim por diante acrescentttando um numero
+function repositorios(projetos) {
+    const project_id = document.querySelector('#project_id');
+    const nameProjeto = document.querySelector('.nameP');
+    const descProjeto = document.querySelector('.descP');
+    //const languagesProjeto = document.querySelector('.languagesP') as HTMLHeadingElement
+    const lastCommit = document.querySelector('.lastCommit');
+    if (nameProjeto)
+        nameProjeto.textContent = projetos.name;
+    if (descProjeto)
+        descProjeto.textContent = projetos.description;
+    if (lastCommit)
+        lastCommit.textContent = projetos.pushed_at;
+}
 function infos(meuPerfil) {
     const avatar = document.querySelector('.avatar');
     const h1 = document.querySelector('.titulo');

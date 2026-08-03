@@ -10,17 +10,35 @@
 // navegação pela tool bar
 // mudança de portugues para ingles
 import type { GitHubUser } from "./services/github.js"
+import type { Repositorio } from "./services/github.js"
 import { loadUser } from "./services/github.js"
+import { loadRepos } from "./services/github.js"
 
 async function main() {
     const user = await loadUser()
+    const repos = await loadRepos()
     infos(user)
+    repositorios(repos)
+
     console.log(user)
+    console.log(repos)
 }
 main()
 
 //INSERIR LOGICA DE: A CADA PROJETO CRIADO, CRIAR UMA DIV COM AS INFORMAÇÕES DESSE PROJETO
 //a cada projeto, criar uma div nova, com a classe 'projeto', projeto2.. e assim por diante acrescentttando um numero
+function repositorios(projetos: Repositorio): void {
+    const project_id = document.querySelector('#project_id') as HTMLHeadingElement
+    const nameProjeto = document.querySelector('.nameP') as HTMLHeadingElement
+    const descProjeto = document.querySelector('.descP') as HTMLHeadingElement
+    //const languagesProjeto = document.querySelector('.languagesP') as HTMLHeadingElement
+    const lastCommit = document.querySelector('.lastCommit') as HTMLHeadingElement
+
+    if (nameProjeto) nameProjeto.textContent = projetos.name
+    if (descProjeto) descProjeto.textContent = projetos.description
+    if (lastCommit) lastCommit.textContent = projetos.pushed_at
+
+}
 
 function infos(meuPerfil: GitHubUser): void {
     const avatar = document.querySelector('.avatar') as HTMLImageElement
