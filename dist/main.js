@@ -11,7 +11,9 @@ async function main() {
 }
 main();
 //INSERIR LOGICA DE: A CADA PROJETO CRIADO, CRIAR UMA DIV COM AS INFORMAÇÕES DESSE PROJETO
+//a cada projeto, criar uma div nova, com a classe 'projeto', projeto2.. e assim por diante acrescentttando um numero
 function infos(meuPerfil) {
+    const avatar = document.querySelector('.avatar');
     const h1 = document.querySelector('.titulo');
     const bio = document.querySelector('.bio');
     const repo = document.querySelector('.repo');
@@ -21,6 +23,8 @@ function infos(meuPerfil) {
         bio.textContent = meuPerfil.bio;
     if (repo)
         repo.textContent = meuPerfil.public_repos.toString(); //forçando a se tornar string
+    if (avatar)
+        avatar.setAttribute('src', `${meuPerfil.avatar_url}`);
 }
 const $btnArquivo = document.querySelector('.btnArquivo');
 const $alteraClasse = document.querySelector('.alteraClasse');

@@ -1,5 +1,6 @@
+const joka = 'bakaout';
 export async function loadUser() {
-    const response = await fetch("https://api.github.com/users/bakaout");
+    const response = await fetch(`https://api.github.com/users/${joka}`);
     //pequena validação
     if (!response) {
         throw new Error('Erro ao buscar perfil');

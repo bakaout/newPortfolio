@@ -8,9 +8,10 @@ export interface GitHubUser {
     following: number;
 }
 
+const joka: string = 'bakaout'
 
 export async function loadUser(): Promise<GitHubUser> {
-    const response = await fetch("https://api.github.com/users/bakaout")
+    const response = await fetch(`https://api.github.com/users/${joka}`)
 
     //pequena validação
     if(!response){

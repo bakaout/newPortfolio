@@ -20,15 +20,18 @@ async function main() {
 main()
 
 //INSERIR LOGICA DE: A CADA PROJETO CRIADO, CRIAR UMA DIV COM AS INFORMAÇÕES DESSE PROJETO
+//a cada projeto, criar uma div nova, com a classe 'projeto', projeto2.. e assim por diante acrescentttando um numero
 
 function infos(meuPerfil: GitHubUser): void {
-    const h1 = document.querySelector('.titulo')
-    const bio = document.querySelector('.bio')
-    const repo = document.querySelector('.repo')
+    const avatar = document.querySelector('.avatar') as HTMLImageElement
+    const h1 = document.querySelector('.titulo') as HTMLHeadingElement
+    const bio = document.querySelector('.bio') as HTMLHeadingElement
+    const repo = document.querySelector('.repo') as HTMLHeadingElement
 
     if (h1) h1.textContent = meuPerfil.name
     if (bio) bio.textContent = meuPerfil.bio
     if (repo) repo.textContent = meuPerfil.public_repos.toString()//forçando a se tornar string
+    if(avatar) avatar.setAttribute('src', `${meuPerfil.avatar_url}`)
 
 }
 
