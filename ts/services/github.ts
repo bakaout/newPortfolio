@@ -45,12 +45,16 @@ export async function loadRepos(): Promise<Repositorio[]>{
 //https://api.github.com/repos/bakaout/CRUDmovies/languages
 
 
-// interface Language_url {
-//     languages_url?: string | null;
-// }
+export interface Language_url {
+    languages_url?: string | null;
+}
 
-// export async function LoadLanguages(url: string){
-//     const response = await fetch(url)
+export async function LoadLanguages(url: any): Promise<Language_url>{
+    const response = await fetch(url)
 
-//     return await response.json()
-// }
+    if(!response.ok){
+        throw new Error(`Erro na API: ${response.status}`)
+    }
+
+    return await response.json()
+}

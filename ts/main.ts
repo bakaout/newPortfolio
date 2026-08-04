@@ -11,12 +11,21 @@
 // mudança de portugues para ingles
 import type { GitHubUser } from "./services/github.js"
 import type { Repositorio } from "./services/github.js"
+import type { Language_url } from "./services/github.js"
 import { loadUser } from "./services/github.js"
 import { loadRepos } from "./services/github.js"
+import { LoadLanguages } from "./services/github.js"
 
 async function main() {
     const user = await loadUser()
     const repos = await loadRepos()
+
+        //peganddo as linguagens dos repositorios
+        for (const projeto of repos){
+        const linguagens = await LoadLanguages(projeto.languages_url)
+        //console.log(linguagens)
+    }
+
     infos(user)
     repositorios(repos)
 
@@ -26,26 +35,31 @@ async function main() {
 main()
 
 //PROXIMA FEATURE: INCREMENTAR LINGUAGENS QUE FORAM USADAS NOS REPOSITORIOS
+function linguagens(url: Language_url){
 
+}
 
 
 
 
 //REPOSITORIOS BBAKAOUT COM NOME, DESCRIÇÃO, ULTTIMO COMMIT
 //Obs: deixar repositorios em ordem de ultimo commit e adicionar mais informações, adicionar bottão de redirecionamento ao github ouu aplicação rodando
-function repositorios(projetos: Repositorio[]): void {
+async function repositorios(projetos: Repositorio[]): Promise<void> {
     //console.log(projetos[0]?.id)
-
+    
     projetos.forEach(projeto => {
         const divRepos = document.querySelector("#repositorios")
         const div = document.createElement('div')
+        
         div.className = 'projetos'
         div.innerHTML = `
             <h1>${projeto.name}</h1>
             <p>${projeto.description}</p>
             <p>${projeto.pushed_at}</p>
+            <p>${LoadLanguages(projeto.languages_url)}</p>
         `
         divRepos?.appendChild(div)
+        
 
     })
 }
