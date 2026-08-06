@@ -55,6 +55,9 @@ export async function LoadLanguages(url: any): Promise<Language_url>{
     if(!response.ok){
         throw new Error(`Erro na API: ${response.status}`)
     }
+    const data = await response.json()
 
-    return await response.json()
+    //console.log('dentro da função')
+
+    return data
 }

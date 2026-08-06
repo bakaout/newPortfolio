@@ -19,6 +19,8 @@ export async function LoadLanguages(url) {
     if (!response.ok) {
         throw new Error(`Erro na API: ${response.status}`);
     }
-    return await response.json();
+    const data = await response.json();
+    //console.log('dentro da função')
+    return data;
 }
 //# sourceMappingURL=github.js.map

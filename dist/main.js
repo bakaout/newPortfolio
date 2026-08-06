@@ -12,33 +12,30 @@ async function main() {
     //peganddo as linguagens dos repositorios
     for (const projeto of repos) {
         const linguagens = await LoadLanguages(projeto.languages_url);
-        //console.log(linguagens)
+        //console.log('fora da função')
+        repositorios(projeto, linguagens);
     }
     infos(user);
-    repositorios(repos);
+    //repositorios(repos)
     console.log(user);
     console.log(repos);
 }
 main();
 //PROXIMA FEATURE: INCREMENTAR LINGUAGENS QUE FORAM USADAS NOS REPOSITORIOS
-function linguagens(url) {
-}
 //REPOSITORIOS BBAKAOUT COM NOME, DESCRIÇÃO, ULTTIMO COMMIT
 //Obs: deixar repositorios em ordem de ultimo commit e adicionar mais informações, adicionar bottão de redirecionamento ao github ouu aplicação rodando
-async function repositorios(projetos) {
+async function repositorios(projetos, linguagens) {
     //console.log(projetos[0]?.id)
-    projetos.forEach(projeto => {
-        const divRepos = document.querySelector("#repositorios");
-        const div = document.createElement('div');
-        div.className = 'projetos';
-        div.innerHTML = `
-            <h1>${projeto.name}</h1>
-            <p>${projeto.description}</p>
-            <p>${projeto.pushed_at}</p>
-            <p>${LoadLanguages(projeto.languages_url)}</p>
+    const divRepos = document.querySelector("#repositorios");
+    const div = document.createElement('div');
+    div.className = 'projetos';
+    div.innerHTML = `
+            <h1>${projetos.name}</h1>
+            <p>${projetos.description}</p>
+            <p>${projetos.pushed_at}</p>
+            <p>${Object.keys(linguagens)}</p>
         `;
-        divRepos?.appendChild(div);
-    });
+    divRepos?.appendChild(div);
 }
 //INFORMAÇÕES DO PERFIL BBAKAOUT
 function infos(meuPerfil) {
