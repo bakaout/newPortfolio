@@ -38,10 +38,6 @@ async function main() {
 }
 main()
 
-//PROXIMA FEATURE: INCREMENTAR LINGUAGENS QUE FORAM USADAS NOS REPOSITORIOS
-
-
-
 
 
 //REPOSITORIOS BBAKAOUT COM NOME, DESCRIÇÃO, ULTTIMO COMMIT
@@ -109,8 +105,17 @@ const $btnPular = document.querySelector<HTMLButtonElement>('.btnPular')
 //função do botão enviar
 const senhaInserida = document.querySelector<HTMLInputElement>('.senha')
 
-function btnEnviaSenha(): void{
+
+const enviar = document.querySelector<HTMLButtonElement>("#enviar")
+
+enviar?.addEventListener('click', () => {
     verificaSenha()
+    btnEnviaSenha()
+})
+
+
+function btnEnviaSenha(): void{
+    
     senhaInserida?.addEventListener('keypress', function(event) {
         if(event.key === 'Enter'){
             console.log('Senha enviada')
@@ -129,6 +134,7 @@ function verificaSenha(): void{
     }else if(senhaInserida.value === senha){
         window.open('../paginas/home.html', '_self')
         senhaInserida.value = ''
+        alert('Senha correta, pode entrar')
     }else{
         alert('Senha errada, vocês tem que me contratar')
         senhaInserida.value = ''
@@ -139,18 +145,22 @@ function verificaSenha(): void{
 //criação da função 'digitando'
 const frase = document.querySelector<HTMLHeadingElement>('#frase')
 
-function digitando(digit: HTMLElement): void{
-    //separando as letras por espaço e colocando em um array
-    const fraseSplit = digit.textContent?.split('')
+function digitando(digit: HTMLElement, texto: string): void{
     //limpando o array para que apareça apenas com o forEach
     digit.textContent = ''
-    fraseSplit.forEach((letra, index) => {
+
+    texto.split('').forEach((letra, index) => {
+
         setTimeout(() => {
-            digit.textContent += letra
-        }, 100 * index)//aqui esta o segredo, a cada index que passa, o valor multiplica, fazendo com que a proxima letra apareça um pouco mais devagar com a impressando de digitando
+            digit.textContent += `${letra}`
+        }, 200 * index)//aqui esta o segredo, a cada index que passa, o valor multiplica, fazendo com que a proxima letra apareça um pouco mais devagar com a impressando de digitando
     })
+    setTimeout(() => {
+            digitando(digit, texto)
+        }, 200 * texto.length + 1000)
 }
 
 if(frase){
-    digitando(frase)
+    //Se textContent existir, use ele. Se for null, use uma string vazia.
+    digitando(frase, frase.textContent ?? '')
 }

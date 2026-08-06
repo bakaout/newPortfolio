@@ -21,7 +21,6 @@ async function main() {
     console.log(repos);
 }
 main();
-//PROXIMA FEATURE: INCREMENTAR LINGUAGENS QUE FORAM USADAS NOS REPOSITORIOS
 //REPOSITORIOS BBAKAOUT COM NOME, DESCRIÇÃO, ULTTIMO COMMIT
 //Obs: deixar repositorios em ordem de ultimo commit e adicionar mais informações, adicionar bottão de redirecionamento ao github ouu aplicação rodando
 async function repositorios(projetos, linguagens) {
@@ -78,8 +77,12 @@ $btnPular?.addEventListener('click', () => {
 });
 //função do botão enviar
 const senhaInserida = document.querySelector('.senha');
-function btnEnviaSenha() {
+const enviar = document.querySelector("#enviar");
+enviar?.addEventListener('click', () => {
     verificaSenha();
+    btnEnviaSenha();
+});
+function btnEnviaSenha() {
     senhaInserida?.addEventListener('keypress', function (event) {
         if (event.key === 'Enter') {
             console.log('Senha enviada');
@@ -96,6 +99,7 @@ function verificaSenha() {
     else if (senhaInserida.value === senha) {
         window.open('../paginas/home.html', '_self');
         senhaInserida.value = '';
+        alert('Senha correta, pode entrar');
     }
     else {
         alert('Senha errada, vocês tem que me contratar');
@@ -104,18 +108,20 @@ function verificaSenha() {
 }
 //criação da função 'digitando'
 const frase = document.querySelector('#frase');
-function digitando(digit) {
-    //separando as letras por espaço e colocando em um array
-    const fraseSplit = digit.textContent?.split('');
+function digitando(digit, texto) {
     //limpando o array para que apareça apenas com o forEach
     digit.textContent = '';
-    fraseSplit.forEach((letra, index) => {
+    texto.split('').forEach((letra, index) => {
         setTimeout(() => {
-            digit.textContent += letra;
-        }, 100 * index); //aqui esta o segredo, a cada index que passa, o valor multiplica, fazendo com que a proxima letra apareça um pouco mais devagar com a impressando de digitando
+            digit.textContent += `${letra}`;
+        }, 200 * index); //aqui esta o segredo, a cada index que passa, o valor multiplica, fazendo com que a proxima letra apareça um pouco mais devagar com a impressando de digitando
     });
+    setTimeout(() => {
+        digitando(digit, texto);
+    }, 200 * texto.length + 1000);
 }
 if (frase) {
-    digitando(frase);
+    //Se textContent existir, use ele. Se for null, use uma string vazia.
+    digitando(frase, frase.textContent ?? '');
 }
 //# sourceMappingURL=main.js.map

@@ -48,6 +48,12 @@ body{
     color: white;
 }
 
+#frase::after {
+    content: "|";
+    animation: piscar 1s infinite;
+}
+
+
 .senha{
     width: 200px;
     padding: 10px;
@@ -256,6 +262,15 @@ span{
     width: 300px;
     border-radius: 20px;
     padding: 10px 0 10px 0;
+}
+
+@keyframes piscar {
+    0%, 50% {
+        opacity: 1;
+    }
+    51%, 100% {
+        opacity: 0;
+    }
 }
 
 @media (max-width: 800px) {
