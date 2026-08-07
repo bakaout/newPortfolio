@@ -6,6 +6,9 @@
 import { loadUser } from "./services/github.js";
 import { loadRepos } from "./services/github.js";
 import { LoadLanguages } from "./services/github.js";
+import { idade } from "./utils.ts/idade.js";
+//colocar isso no texto da pagina sobreMIM
+console.log(idade());
 async function main() {
     const user = await loadUser();
     const repos = await loadRepos();
