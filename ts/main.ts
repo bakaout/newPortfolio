@@ -19,6 +19,8 @@ import { idade } from "./utils.ts/idade.js"
 
 //colocar isso no texto da pagina sobreMIM
 console.log(idade())
+const spanIdade = document.querySelector('.idade')
+if(spanIdade) spanIdade.textContent = idade().toString()
 
 async function main() {
     const user = await loadUser()

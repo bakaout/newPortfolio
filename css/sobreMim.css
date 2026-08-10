@@ -1,0 +1,190 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0d0d0d;
+    color: #f1f1f1;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================
+   TÍTULO — ABOUT ME
+========================= */
+
+#sobreRotate {
+    min-height: 30vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-bottom: 1px solid #242424;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #1c1c1c 0%,
+            #0d0d0d 60%
+        );
+}
+
+#h1Rotate {
+    font-size: clamp(4rem, 10vw, 9rem);
+    font-weight: 600;
+
+    letter-spacing: -6px;
+
+    color: transparent;
+
+    -webkit-text-stroke: 1px #555;
+
+    transition: 0.4s ease;
+}
+
+#h1Rotate:hover {
+    color: #f1f1f1;
+    -webkit-text-stroke: 1px #f1f1f1;
+}
+
+
+/* =========================
+   CONTEÚDO
+========================= */
+
+#main {
+    width: min(1100px, 90%);
+    margin: 0 auto;
+
+    padding: 100px 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+
+/* =========================
+   SEÇÕES
+========================= */
+
+#main > div {
+    position: relative;
+
+    padding: 40px;
+
+    background: #121212;
+
+    border: 1px solid #242424;
+
+    border-radius: 12px;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
+
+#main > div:hover {
+    transform: translateY(-5px);
+
+    border-color: #444;
+
+    background: #151515;
+}
+
+
+/* =========================
+   LINHA LATERAL
+========================= */
+
+#main > div::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 25px;
+    bottom: 25px;
+
+    width: 3px;
+
+    background: #f1f1f1;
+
+    border-radius: 10px;
+}
+
+
+/* =========================
+   TÍTULOS
+========================= */
+
+#main h1 {
+    margin-bottom: 25px;
+
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+
+    font-weight: 700;
+
+    letter-spacing: -1px;
+}
+
+
+/* =========================
+   TEXTOS
+========================= */
+
+#main p {
+    max-width: 800px;
+
+    color: #a7a7a7;
+
+    font-size: 1.05rem;
+
+    line-height: 1.8;
+}
+
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 700px) {
+
+    #sobreRotate {
+        min-height: 35vh;
+    }
+
+    #h1Rotate {
+        letter-spacing: -3px;
+    }
+
+    #main {
+        width: 92%;
+
+        padding: 60px 0;
+
+        gap: 40px;
+    }
+
+    #main > div {
+        padding: 30px 25px;
+    }
+
+    #main h1 {
+        font-size: 1.8rem;
+    }
+
+    #main p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+}
