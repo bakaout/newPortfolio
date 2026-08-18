@@ -1,85 +1,360 @@
-*{
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
+
 
 @font-face {
     font-family: 'pixel';
     src: url(../fonts/Pixel\ Georgia\ Bold.ttf);
 }
+
 @font-face {
     font-family: 'pixelFino';
     src: url(../fonts/Pixel\ Georgia.ttf);
 }
 
 
+#bodyHome {
+    min-height: 100vh;
 
-#bodyHome{
-    background-color: #000000;
+    background-color: #000;
     color: white;
-    text-align: center;
-    position: relative;
+
+    font-family: 'pixelFino';
+
+    overflow-x: hidden;
 }
-#containerHome{
-    position: relative;
-    background-color: black;
-    align-items: center;
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+#containerHome {
+    min-height: 100vh;
+
     display: flex;
     flex-direction: column;
-    height: 100vh;
+
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    padding: 40px 20px 150px;
+}
+
+
+/* =========================
+   TITULO
+========================= */
+
+.tituloHome {
+    position: absolute;
+
+    top: 90px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+.tituloHome h1 {
+    font-family: 'pixel';
+
+    font-size: 50px;
+
+    letter-spacing: 2px;
+
+    text-shadow:
+        3px 3px 0 #222;
+}
+
+
+.tituloHome p {
+    font-family: 'pixelFino';
+
+    font-size: 15px;
+
+    opacity: 0.6;
+
+    letter-spacing: 2px;
+}
+
+
+.tituloLinha {
+    width: 70px;
+
+    height: 2px;
+
+    background-color: white;
+
+    opacity: 0.5;
+}
+
+
+/* =========================
+   PASTAS
+========================= */
+
+#listaPastas {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 150px);
+
+    gap: 30px;
+
+    align-items: start;
     justify-content: center;
 }
-#containerHome > h1{
-    font-family: 'pixel';
-    font-size: 50px;
-    position: absolute;
-    top: 120px;  
-}
-#listaPastas{
-    display: grid;/*MUDAR PARA GRID*/
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    /*border: 1px solid red;*/
-    /*COLOCAR WRAPPER PRA QUEBRA DE LINHA*/
-}
-#pastas{
-    padding: 20px;
-}
-#pastas:hover{
-    transform: scale(1.07);
-    transition: transform 0.5s ease-in;
-}
-#pastas > p{
-    font-family: 'pixelFino';
+
+
+.pasta {
+
+    padding: 15px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 8px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        filter 0.25s ease;
 }
 
-#pastas > img{
-    width: 100px;
+
+.pasta a {
+
+    display: block;
 }
-#footerHome{
+
+
+.pasta img {
+
+    width: 110px;
+
+    image-rendering: pixelated;
+
+    transition:
+        transform 0.25s ease;
+}
+
+
+.pasta p {
+
+    font-family: 'pixelFino';
+
+    font-size: 17px;
+
+    transition:
+        opacity 0.25s ease;
+}
+
+
+/* =========================
+   HOVER
+========================= */
+
+.pasta:hover {
+
+    transform: translateY(-8px);
+
+}
+
+
+.pasta:hover img {
+
+    transform: scale(1.08);
+
+}
+
+
+.pasta:hover p {
+
+    opacity: 0.7;
+
+}
+
+
+/* =========================
+   FOOTER / DOCK
+========================= */
+
+#footerHome {
+
     position: fixed;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    font-size: 50px;
-    bottom: 30px;
+
     left: 50%;
-    transform: translate(-50%);
-    padding: 5px;
-    background-color: white;
-    color: black;
+    bottom: 25px;
+
+    transform: translateX(-50%);
+
     width: 300px;
-    border-radius: 20px;
-    padding: 10px 0 10px 0;
+
+    padding: 10px 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-around;
+
+    background-color: white;
+
+    border: 2px solid #222;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 30px rgba(255, 255, 255, 0.08);
+
+    z-index: 10;
 }
+
+
+#footerHome button {
+
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: transparent;
+
+    border: none;
+
+    cursor: pointer;
+
+    border-radius: 12px;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+#footerHome button:hover {
+
+    background-color: #eeeeee;
+
+    transform: translateY(-3px);
+
+}
+
+
+#footerHome img {
+
+    width: 35px;
+
+    height: 35px;
+
+    object-fit: contain;
+}
+
+
+/* =========================
+   TABLET
+========================= */
 
 @media (max-width: 800px) {
-    #listaPastas{
-        display: grid;/*MUDAR PARA GRID*/
-        grid-template-columns: 1fr 1fr;
-        margin-top: 50px;
+
+    .tituloHome {
+
+        top: 60px;
+
     }
-    #containerHome > h1{
-        top: 50px;  
+
+
+    .tituloHome h1 {
+
+        font-size: 38px;
+
     }
+
+
+    #listaPastas {
+
+        grid-template-columns: repeat(2, 150px);
+
+        gap: 25px;
+
+    }
+
 }
-/*FIM DA PAGINA HOME*/
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 450px) {
+
+    #containerHome {
+
+        padding-top: 130px;
+
+    }
+
+
+    .tituloHome h1 {
+
+        font-size: 28px;
+
+    }
+
+
+    .tituloHome p {
+
+        font-size: 12px;
+
+    }
+
+
+    #listaPastas {
+
+        grid-template-columns: repeat(2, 120px);
+
+        gap: 15px;
+
+    }
+
+
+    .pasta img {
+
+        width: 90px;
+
+    }
+
+
+    .pasta p {
+
+        font-size: 14px;
+
+    }
+
+
+    #footerHome {
+
+        width: 260px;
+
+        bottom: 15px;
+
+    }
+
+}

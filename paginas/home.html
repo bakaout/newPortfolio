@@ -1,44 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Home</title>
+
     <link rel="stylesheet" href="../css/home.css">
 </head>
+
 <body id="bodyHome">
-    <div id="containerHome">
-        <h1>Developer Front End</h1>
+
+    <main id="containerHome">
+
+        <div class="tituloHome">
+            <span class="tituloLinha"></span>
+
+            <h1>Developer Front End</h1>
+
+            <p>Welcome to my digital space</p>
+
+            <span class="tituloLinha"></span>
+        </div>
+
+
         <div id="listaPastas">
-            <div id="pastas">
-                <a href="../paginas/sobreMim.html"><img width="130px" src="../imgs/pasta.png" alt=""></a>
+
+            <div class="pasta">
+                <a href="../paginas/sobreMim.html">
+                    <img src="../imgs/pasta.png" alt="Pasta Sobre mim">
+                </a>
+
                 <p>Sobre mim</p>
             </div>
-            <div id="pastas">
-                <a href="../paginas/projetos.html"><img width="130px" src="../imgs/pasta.png" alt=""></a>
+
+
+            <div class="pasta">
+                <a href="../paginas/projetos.html">
+                    <img src="../imgs/pasta.png" alt="Pasta Projetos">
+                </a>
+
                 <p>Projetos</p>
             </div>
-            <div id="pastas">
-                <a href="../paginas/contato.html"><img width="130px" src="../imgs/pasta.png" alt=""></a>
+
+
+            <div class="pasta">
+                <a href="../paginas/contato.html">
+                    <img src="../imgs/pasta.png" alt="Pasta Contato">
+                </a>
+
                 <p>Contato</p>
             </div>
-            <div id="pastas">
-                <a href="../paginas/laboratorio.html"><img width="130px" src="../imgs/pasta.png" alt=""></a>
+
+
+            <div class="pasta">
+                <a href="../paginas/laboratorio.html">
+                    <img src="../imgs/pasta.png" alt="Pasta Laboratório">
+                </a>
+
                 <p>Laboratório</p>
             </div>
+
         </div>
-    </div>
-    <div id="footerHome">
-            <div>
-                <img width="40px" src="../imgs/dia-e-noite.png" alt="">
-            </div>
-            
-            <div>
-                <img width="40px" src="../imgs/eng (1).png" alt="">
-            </div>
-            
-            <div>
-                <img width="40px" src="../imgs/botao-voltar.png" alt=""></p>
-    </div>
+
+    </main>
+
+
+    <footer id="footerHome">
+
+        <button>
+            <img src="../imgs/dia-e-noite.png" alt="Alternar tema">
+        </button>
+
+        <button>
+            <img src="../imgs/eng (1).png" alt="Idioma">
+        </button>
+
+        <button onclick="history.back()">
+            <img src="../imgs/botao-voltar.png" alt="Voltar">
+        </button>
+
+    </footer>
+
 </body>
+
 </html>
