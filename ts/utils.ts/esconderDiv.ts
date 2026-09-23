@@ -14,7 +14,6 @@ const $popup = document.querySelector('.popup')
 $pasta.forEach((pastas) => {
     console.log(pastas)
     pastas.addEventListener('click', () => {
-        alert('func')
         const arquivo = pastas.dataset.arquivo as keyof typeof content
         if ($popup) {
             $popup.textContent = content[arquivo]
