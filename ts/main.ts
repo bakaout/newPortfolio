@@ -1,7 +1,5 @@
 //FUNCIONALIDADES QUE QUERO IMPLEMENTAR:
-// - alterar para um projeto typescript com node.js
-//criar um contaddor de visitas com algumas funcionalidades
-//na aba de projetos, usar a api do github para pegar meus projetos, atualizações, tecnologias usadas, datas, read.me formatados direto no site, entre outras
+//criar um contador de visitas com algumas funcionalidades
 //manter a ideia original do projeto de ser parecido com o ambiente de uma area de trabalho
 
 // paginas: sobre mim, Jornada, Projetos (utilizando api github)

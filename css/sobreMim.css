@@ -13,7 +13,80 @@ body {
     color: #f1f1f1;
     font-family: Arial, Helvetica, sans-serif;
 }
+#containerHome {
+    min-height: 100vh;
 
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    padding: 40px 20px 150px;
+}
+
+/*PASTAS SOBRE*/
+#listaPastasSobre {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 150px);
+
+    gap: 30px;
+
+    align-items: start;
+    justify-content: center;
+}
+
+
+.pasta {
+
+    padding: 15px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 8px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        filter 0.25s ease;
+}
+
+
+.pasta a {
+
+    display: block;
+}
+
+
+.pasta img {
+
+    width: 110px;
+
+    image-rendering: pixelated;
+
+    transition:
+        transform 0.25s ease;
+}
+
+
+.pasta p {
+
+    font-family: 'pixelFino';
+
+    font-size: 17px;
+
+    transition:
+        opacity 0.25s ease;
+}
 
 /* =========================
    TÍTULO — ABOUT ME
@@ -150,6 +223,135 @@ body {
 
     line-height: 1.8;
 }
+
+/*sistema de arquivosEscondidos*/
+
+.esconder {
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0.8);
+
+    width: 250px;
+    height: 350px;
+
+    position: fixed;
+    bottom: 120px;
+    right: 30px;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        visibility 0.2s;
+}
+
+.arquivoAberto {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+
+    width: 250px;
+    height: 350px;
+
+    position: fixed;
+    bottom: 120px;
+    right: 30px;
+
+    background-color: white;
+    border-radius: 3px;
+
+    pointer-events: auto;
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        visibility 0.2s;
+}
+
+.arquivoAberto > .headerBox{
+    background-color: #7e0dff;
+    color: #fff;
+    font-family: 'pixel', 'Courier New', Courier, monospace;
+    padding: 10px;
+}
+
+/*FOOTER*/
+#footerHome {
+
+    position: fixed;
+
+    left: 50%;
+    bottom: 25px;
+
+    transform: translateX(-50%);
+
+    width: 300px;
+
+    padding: 10px 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-around;
+
+    background-color: white;
+
+    border: 2px solid #222;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 30px rgba(255, 255, 255, 0.08);
+
+    z-index: 10;
+}
+
+
+#footerHome button {
+
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: transparent;
+
+    border: none;
+
+    cursor: pointer;
+
+    border-radius: 12px;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+#footerHome button:hover {
+
+    background-color: #eeeeee;
+
+    transform: translateY(-3px);
+
+}
+
+
+#footerHome img {
+
+    width: 35px;
+
+    height: 35px;
+
+    object-fit: contain;
+}
+
+
 
 
 

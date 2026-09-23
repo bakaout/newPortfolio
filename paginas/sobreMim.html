@@ -6,29 +6,63 @@
     <title>Sobre mim</title>
     <link rel="stylesheet" href="../css/sobreMim.css">
     <script type="module" src="../dist/main.js"></script>
+    <script type="module" defer src="../dist/utils.ts/esconderDiv.js"></script>
 </head>
 <body id="bodySobreMim">
     <div id="sobreRotate">
         <h1 id="h1Rotate">About Me</h1>
     </div>
-    <div id="main">
-        <div id="comeco">
-            <h1>Meu começo</h1>
-            <p>
-                Meu nome é João Victor, tenho <span class="idade"></span> anos
-                Atualmente estudo arquitetura de APIs REST, autenticação, banco de dados SQL e boas práticas de desenvolvimento. 
-                Também atuo como freelancer desenvolvendo sites e soluções para pequenos negócios, o que me permitiu desenvolver habilidades de comunicação com clientes e resolução de problemas. 
-                Busco uma oportunidade de emprego onde eu possa contribuir com projetos reais enquanto continuo evoluindo tecnicamente.
-            </p>
+
+    <main id="containerHome">
+
+        <div class ="alteraClasse esconder popup">
+
         </div>
-        <div id="habilidades">
-            <h1>Minhas habilidades</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta esse ipsam, itaque sequi quo, vitae tempora fugiat necessitatibus possimus mollitia qui nam eos, molestias similique?</p>
+
+
+        <!--PASTASS-->
+            <div id="listaPastasSobre">
+
+            <div class="pasta" data-arquivo="whoami">
+                    <img src="../imgs/pasta.png" alt="Pasta Sobre mim">
+                <p>Quem sou eu</p>
+            </div>
+
+
+            <div class="pasta" data-arquivo="myjourney">
+                    <img src="../imgs/pasta.png" alt="Pasta Projetos">
+                <p>Minha jornada</p>
+            </div>
+
+
+            <div class="pasta" data-arquivo="tecnologys">
+                    <img src="../imgs/pasta.png" alt="Pasta Contato">
+                <p>Tecnologias</p>
+            </div>
+
+
+            <div class="pasta" data-arquivo="whathaveibeenstudying">
+                    <img src="../imgs/pasta.png" alt="Pasta Laboratório">
+                <p>Estudos atuais</p>
+            </div>
+
         </div>
-        <div id="queroChegar">
-            <h1>Onde quero chegar</h1>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe impedit soluta consequatur ut quisquam officiis?</p>
-        </div>
-    </div>
+
+    </main>
+        <footer id="footerHome">
+
+        <button>
+            <img src="../imgs/dia-e-noite.png" alt="Alternar tema">
+        </button>
+
+        <button>
+            <img src="../imgs/eng (1).png" alt="Idioma">
+        </button>
+
+        <button onclick="history.back()">
+            <img src="../imgs/botao-voltar.png" alt="Voltar">
+        </button>
+
+    </footer>
 </body>
 </html>
